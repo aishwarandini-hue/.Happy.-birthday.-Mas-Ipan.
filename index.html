@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mas Ipan 🌻</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+overflow:hidden;
+background:black;
+color:white;
+}
+
+/* PAGE */
+
+.page{
+position:absolute;
+width:100%;
+height:100vh;
+top:0;
+left:0;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+overflow:hidden;
+transition:1s;
+}
+
+.active{
+display:flex;
+}
+
+/* PAGE 1 */
+
+#page1{
+background:
+radial-gradient(circle,#222,#000);
+}
+
+.title{
+font-size:55px;
+font-weight:bold;
+text-align:center;
+color:#ffe066;
+text-shadow:
+0 0 10px gold,
+0 0 20px orange;
+margin-bottom:30px;
+z-index:5;
+padding:20px;
+animation:floatText 2s infinite ease-in-out;
+}
+
+.startBtn{
+padding:20px 50px;
+border:none;
+border-radius:100px;
+background:#ffd43b;
+font-size:28px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 30px gold;
+animation:pulse 2s infinite;
+z-index:5;
+}
+
+.startBtn:hover{
+transform:scale(1.05);
+}
+
+.cat{
+position:absolute;
+bottom:30px;
+right:20px;
+width:220px;
+z-index:3;
+animation:catMove 2s infinite ease-in-out;
+}
+
+@keyframes catMove{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+/* PAGE 2 */
+
+#page2{
+background:
+radial-gradient(circle at center,#09142e,#000);
+overflow:hidden;
+}
+
+.spaceText{
+position:absolute;
+top:40px;
+font-size:40px;
+font-weight:bold;
+text-shadow:0 0 20px white;
+z-index:10;
+animation:floatText 3s infinite ease-in-out;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+box-shadow:0 0 10px white;
+animation:starMove linear infinite;
+}
+
+@keyframes starMove{
+from{
+transform:translateY(0px);
+opacity:1;
+}
+to{
+transform:translateY(120vh);
+opacity:0;
+}
+}
+
+.planet{
+position:absolute;
+border-radius:50%;
+box-shadow:0 0 50px rgba(255,255,255,0.4);
+animation:planetFloat 8s infinite ease-in-out;
+}
+
+@keyframes planetFloat{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-25px);}
+100%{transform:translateY(0px);}
+}
+
+.meteor{
+position:absolute;
+width:3px;
+height:120px;
+background:linear-gradient(white,transparent);
+transform:rotate(45deg);
+opacity:0.8;
+animation:meteorFall linear forwards;
+}
+
+@keyframes meteorFall{
+0%{
+transform:translate(0,0) rotate(45deg);
+opacity:1;
+}
+
+100%{
+transform:translate(-700px,700px) rotate(45deg);
+opacity:0;
+}
+}
+
+/* PAGE 3 */
+
+#page3{
+background:black;
+}
+
+.birthdayText{
+position:absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:75px;
+font-weight:bold;
+text-align:center;
+color:#ffd43b;
+text-shadow:
+0 0 10px gold,
+0 0 20px orange,
+0 0 50px yellow;
+z-index:10;
+animation:
+birthdayGlow 2s infinite alternate,
+floatText 3s infinite ease-in-out;
+padding:20px;
+}
+
+@keyframes birthdayGlow{
+from{
+text-shadow:
+0 0 10px gold,
+0 0 20px orange;
+}
+
+to{
+text-shadow:
+0 0 20px #fff176,
+0 0 40px gold,
+0 0 70px orange;
+}
+}
+
+.flower{
+position:absolute;
+top:-100px;
+font-size:25px;
+animation:flowerFall linear forwards;
+}
+
+@keyframes flowerFall{
+0%{
+transform:translateY(-100px) rotate(0deg);
+}
+
+100%{
+transform:translateY(120vh) rotate(360deg);
+}
+}
+
+/* PAGE 4 */
+
+#page4{
+background:
+radial-gradient(circle,#0a1633,#000);
+overflow:hidden;
+}
+
+.bigFlower{
+position:absolute;
+width:700px;
+opacity:0.15;
+animation:rotateFlower 35s linear infinite;
+}
+
+@keyframes rotateFlower{
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+}
+
+.letter{
+position:relative;
+width:85%;
+max-width:900px;
+padding:50px;
+border-radius:40px;
+background:
+linear-gradient(to bottom,#8e244d,#5a1733);
+box-shadow:
+0 0 40px rgba(255,105,180,0.5);
+z-index:10;
+backdrop-filter:blur(10px);
+animation:floatLetter 3s infinite ease-in-out;
+}
+
+@keyframes floatLetter{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+.letter h1{
+font-size:55px;
+margin-bottom:25px;
+color:#ffd6e8;
+text-shadow:0 0 15px pink;
+}
+
+.letter p{
+font-size:28px;
+line-height:1.8;
+font-weight:bold;
+animation:textMove 2s infinite ease-in-out;
+}
+
+@keyframes textMove{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-3px);}
+100%{transform:translateY(0px);}
+}
+
+/* BUTTON NEXT */
+
+.nextBtn{
+position:absolute;
+bottom:40px;
+padding:16px 40px;
+border:none;
+border-radius:100px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+background:white;
+z-index:20;
+}
+
+/* SPARKLES */
+
+.sparkle{
+position:absolute;
+font-size:14px;
+animation:sparkleAnim linear forwards;
+pointer-events:none;
+}
+
+@keyframes sparkleAnim{
+0%{
+transform:translateY(0px) scale(0);
+opacity:0;
+}
+
+50%{
+opacity:1;
+transform:scale(1);
+}
+
+100%{
+transform:translateY(-100px) scale(0);
+opacity:0;
+}
+}
+
+/* FLOAT TEXT */
+
+@keyframes floatText{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.title{
+font-size:34px;
+}
+
+.startBtn{
+font-size:20px;
+padding:18px 35px;
+}
+
+.cat{
+width:140px;
+}
+
+.spaceText{
+font-size:28px;
+}
+
+.birthdayText{
+font-size:42px;
+width:95%;
+}
+
+.bigFlower{
+width:450px;
+}
+
+.letter{
+padding:30px;
+}
+
+.letter h1{
+font-size:34px;
+}
+
+.letter p{
+font-size:19px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+<div class="title">
+Klik di sini ya mas Ipan 🌻
+</div>
+
+<button class="startBtn" onclick="nextPage(2)">
+SELANJUTNYA
+</button>
+
+<img class="cat"
+src="https://media.tenor.com/4Gz4M4G2x6QAAAAi/cat-cute.gif">
+
+</section>
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+<div class="spaceText">
+🌌 Welcome To The Galaxy 🌌
+</div>
+
+<button class="nextBtn" onclick="nextPage(3)">
+Lanjut ✨
+</button>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section class="page" id="page3">
+
+<div class="birthdayText">
+HAPPY BIRTHDAY<br>
+MAS IPAN 🌻
+</div>
+
+<button class="nextBtn" onclick="nextPage(4)">
+Buka Surat 💌
+</button>
+
+</section>
+
+<!-- PAGE 4 -->
+
+<section class="page" id="page4">
+
+<img class="bigFlower"
+src="https://pngimg.com/d/sunflower_PNG13417.png">
+
+<div class="letter">
+
+<h1>Untuk Mas Ipan 💛</h1>
+
+<p>
+Udah naik level ke 23 tahun nih xixi,
+semoga mas Ipan selalu dikelilingi
+hal-hal baik, dilancarkan segalanya,
+sehat selalu, makin bahagia,
+makin banyak rezeki, dan tetap jadi
+mas Ipan yang keren xixi.
+<br><br>
+Semoga mas Ipan juga kayak bunga matahari—
+tetap tumbuh dan tetap nyari cahaya
+walau hidup kadang suka ada plot twist ✨
+</p>
+
+</div>
+
+</section>
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=dreams-110734.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* PAGE */
+
+function nextPage(page){
+
+document.querySelectorAll('.page')
+.forEach(p=>{
+p.classList.remove('active');
+});
+
+document.getElementById('page'+page)
+.classList.add('active');
+
+}
+
+/* MUSIC */
+
+const music = document.getElementById("music");
+
+document.querySelector(".startBtn")
+.addEventListener("click", ()=>{
+
+music.play();
+
+});
+
+/* STARS */
+
+for(let i=0;i<500;i++){
+
+const star = document.createElement("div");
+
+star.classList.add("star");
+
+const size = Math.random()*3;
+
+star.style.width = size+"px";
+star.style.height = size+"px";
+
+star.style.left =
+Math.random()*window.innerWidth+"px";
+
+star.style.top =
+Math.random()*window.innerHeight+"px";
+
+star.style.animationDuration =
+(Math.random()*10+5)+"s";
+
+document.getElementById("page2")
+.appendChild(star);
+
+}
+
+/* PLANETS */
+
+const colors = [
+"#5dade2",
+"#af7ac5",
+"#f4d03f",
+"#58d68d",
+"#ff6b81"
+];
+
+for(let i=0;i<8;i++){
+
+const planet = document.createElement("div");
+
+planet.classList.add("planet");
+
+const size = Math.random()*120+60;
+
+planet.style.width = size+"px";
+planet.style.height = size+"px";
+
+planet.style.background =
+colors[Math.floor(Math.random()*colors.length)];
+
+planet.style.left =
+Math.random()*window.innerWidth+"px";
+
+planet.style.top =
+Math.random()*window.innerHeight+"px";
+
+planet.style.animationDuration =
+(Math.random()*10+5)+"s";
+
+document.getElementById("page2")
+.appendChild(planet);
+
+}
+
+/* METEOR */
+
+function createMeteor(){
+
+const meteor = document.createElement("div");
+
+meteor.classList.add("meteor");
+
+meteor.style.left =
+Math.random()*window.innerWidth+"px";
+
+meteor.style.top =
+Math.random()*300+"px";
+
+meteor.style.animationDuration =
+(Math.random()*2+1)+"s";
+
+document.getElementById("page2")
+.appendChild(meteor);
+
+setTimeout(()=>{
+meteor.remove();
+},3000);
+
+}
+
+setInterval(createMeteor,2500);
+
+/* FLOWERS */
+
+function createFlower(){
+
+const flower = document.createElement("div");
+
+flower.classList.add("flower");
+
+flower.innerHTML = "🌻";
+
+flower.style.left =
+Math.random()*window.innerWidth+"px";
+
+flower.style.fontSize =
+(Math.random()*30+20)+"px";
+
+flower.style.animationDuration =
+(Math.random()*5+4)+"s";
+
+document.getElementById("page3")
+.appendChild(flower);
+
+setTimeout(()=>{
+flower.remove();
+},9000);
+
+}
+
+setInterval(createFlower,70);
+
+/* SPARKLES */
+
+function createSparkle(){
+
+const sparkle = document.createElement("div");
+
+sparkle.classList.add("sparkle");
+
+sparkle.innerHTML = "✨";
+
+sparkle.style.left =
+Math.random()*window.innerWidth+"px";
+
+sparkle.style.top =
+Math.random()*window.innerHeight+"px";
+
+sparkle.style.animationDuration =
+(Math.random()*3+2)+"s";
+
+sparkle.style.fontSize =
+(Math.random()*15+10)+"px";
+
+document.body.appendChild(sparkle);
+
+setTimeout(()=>{
+sparkle.remove();
+},5000);
+
+}
+
+setInterval(createSparkle,250);
+
+</script>
+
+</body>
+</html>
